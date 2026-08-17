@@ -12,6 +12,7 @@ content/posts/seitan/待解析/已处理/
 /AGENTS.md
 .trae/
 try_saas.py
+.claude/
 
 # Hugo output
 /public/
