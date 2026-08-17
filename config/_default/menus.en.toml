@@ -1,0 +1,11 @@
+# -- Main Menu --
+
+[[main]]
+  name = "文章归档"
+  pageRef = "posts"
+  weight = 10
+
+[[main]]
+  name = "关于"
+  pageRef = "about"
+  weight = 20

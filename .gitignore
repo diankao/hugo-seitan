@@ -1,0 +1,30 @@
+# Ignore the 待解析/已处理 folder
+content/posts/seitan/待解析/已处理/
+
+# 面包抽题工具：本地数据与脚本，不入库
+/面包/
+
+# 本地暂存与内部流水线，不入库不发布
+/content/posts/seitan/待解析/
+/content/posts/seitan/待整理/
+/content/posts/seitan/99_aiuse/
+/抽选器/
+/AGENTS.md
+.trae/
+try_saas.py
+
+# Hugo output
+/public/
+/resources/
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

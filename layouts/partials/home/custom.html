@@ -1,0 +1,106 @@
+  {{/* Header */}}
+  <header>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  </header>
+
+  {{/* Get posts section */}}
+  {{ $postsSection := site.GetPage "/posts" }}
+  {{ $seitanSection := site.GetPage "/posts/seitan" }}
+
+  {{/* Get all sub-sections of seitan */}}
+  {{ $sections := slice }}
+  {{ if $seitanSection }}
+    {{ range $seitanSection.Sections }}
+      {{ $sections = $sections | append . }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Render each section */}}
+  {{ range $sections }}
+    {{ $sectionPages := where .RegularPages "Params.draft" "!=" true }}
+    {{ if gt (len $sectionPages) 0 }}
+      {{ $uid := printf "section-%s" .File.BaseFileName }}
+      <details class="group" id="{{ $uid }}">
+        <summary class="mt-12 mb-3 flex cursor-pointer items-center justify-between text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300 list-none">
+          <span>{{ .Title }}</span>
+          <span class="transform transition-transform duration-200 group-open:rotate-180">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </summary>
+        <div class="open:animate-fadeIn">
+          {{ $cardView := site.Params.homepage.cardView | default false }}
+          {{ $cardViewScreenWidth := site.Params.homepage.cardViewScreenWidth | default false }}
+          
+          {{ if $cardView }}
+            {{ if $cardViewScreenWidth }}
+              <div class="relative w-screen max-w-[1600px] px-[30px] start-[calc(max(-50vw,-800px)+50%)]">
+                <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+                  {{ range $sectionPages }}
+                    {{ partial "article-link/card.html" . }}
+                  {{ end }}
+                </section>
+              </div>
+            {{ else }}
+              <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+                {{ range $sectionPages }}
+                  {{ partial "article-link/card.html" . }}
+                {{ end }}
+              </section>
+            {{ end }}
+          {{ else }}
+            <section class="space-y-10 w-full">
+              {{ range $sectionPages }}
+                {{ partial "article-link/simple.html" . }}
+              {{ end }}
+            </section>
+          {{ end }}
+        </div>
+      </details>
+    {{ end }}
+  {{ end }}
+
+  {{/* Also show pages directly under posts (not in seitan) */}}
+  {{ $otherPages := where $postsSection.RegularPages "Params.draft" "!=" true }}
+  {{ range $sections }}
+    {{ $otherPages = where $otherPages "Parent" "ne" . }}
+  {{ end }}
+  {{ if gt (len $otherPages) 0 }}
+    {{ $uid := printf "section-other" }}
+    <details class="group" id="{{ $uid }}">
+      <summary class="mt-12 mb-3 flex cursor-pointer items-center justify-between text-2xl font-bold text-neutral-700 first:mt-8 dark:text-neutral-300 list-none">
+        <span>其他文章</span>
+        <span class="transform transition-transform duration-200 group-open:rotate-180">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </span>
+      </summary>
+      <div class="open:animate-fadeIn">
+        {{ $cardView := site.Params.homepage.cardView | default false }}
+        {{ if $cardView }}
+          <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {{ range $otherPages }}
+              {{ partial "article-link/card.html" . }}
+            {{ end }}
+          </section>
+        {{ else }}
+          <section class="space-y-10 w-full">
+            {{ range $otherPages }}
+              {{ partial "article-link/simple.html" . }}
+            {{ end }}
+          </section>
+        {{ end }}
+      </div>
+    </details>
+  {{ end }}
+
+  {{/* If no sections found */}}
+  {{ if eq (len $sections) 0 }}
+    <section class="mt-10 prose dark:prose-invert">
+      <p class="py-8 border-t">
+        <em>{{ i18n "list.no_articles" | emojify }}</em>
+      </p>
+    </section>
+  {{ end }}

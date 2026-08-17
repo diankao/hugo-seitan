@@ -1,0 +1,68 @@
+# -- Theme Options --
+
+colorScheme = "blowfish"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+enableSearch = true
+disableImageOptimization = false
+
+[header]
+  layout = "basic"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  # 首页布局方式：custom(自定义)、page(单页)、profile(个人资料)、hero(英雄区)
+  layout = "custom"
+  # 是否显示最近文章
+  showRecent = false
+  # 显示最近文章的数量
+  showRecentItems = 10
+  # 是否显示"查看更多"链接
+  showMoreLink = true
+  # "查看更多"链接的目标路径
+  showMoreLinkDest = "/posts/"
+  # 是否使用卡片视图展示文章
+  cardView = true
+  # 卡片视图是否占满屏幕宽度
+  cardViewScreenWidth = false
+  # 是否启用背景模糊效果
+  layoutBackgroundBlur = false
+  # 是否禁用英雄图片滤镜
+  disableHeroImageFilter = false
+  # 是否按年份分组显示文章
+  groupByYear = true
+  # 是否按权重排序（false则按日期排序）
+  orderByWeight = false
+
+[article]
+  showDate = true
+  showAuthor = true
+  showHero = false
+  showBreadcrumbs = false
+  showDraftLabel = true
+  showHeadingAnchors = true
+  showPagination = true
+  showReadingTime = true
+  showTableOfContents = false
+  showWordCount = true
+
+[list]
+  showHero = false
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
+  showBreadcrumbs = false
+  showSummary = true
+  showTableOfContents = false
+  showCards = true
+  orderByWeight = false
+  groupByYear = true
+  cardView = true
+  cardViewScreenWidth = true
+  constrainItemsWidth = false

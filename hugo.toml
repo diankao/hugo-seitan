@@ -1,0 +1,20 @@
+baseURL = 'https://diankao.github.io/hugo-seitan/'
+locale = 'en-US'
+title = '嵌入式学习笔记'
+theme = 'blowfish'
+
+enableRobotsTXT = true
+summaryLength = 0
+
+buildDrafts = true
+
+ignoreFiles = ["content/posts/seitan/待解析/.*", "content/posts/seitan/待整理/.*", "content/posts/seitan/99_aiuse/.*"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
