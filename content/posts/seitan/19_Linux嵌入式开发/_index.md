@@ -1,9 +1,11 @@
 +++
-title = '19_Linux嵌入式开发'
+title = 'Linux嵌入式开发'
 date = 2026-04-25T00:00:00+08:00
 draft = false
+description = "本分类包含 Linux 平台嵌入式开发相关的学习笔记"
 categories = ['嵌入式']
 tags = ['知识领域']
+weight = 19
 +++
 
 # 19_Linux嵌入式开发

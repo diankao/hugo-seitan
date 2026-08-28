@@ -7,6 +7,9 @@ autoSwitchAppearance = true
 enableSearch = true
 disableImageOptimization = false
 
+# 全站日期显示格式(文章页、卡片等)
+dateFormat = "2006-01-02"
+
 [header]
   layout = "basic"
 
@@ -20,6 +23,8 @@ disableImageOptimization = false
 [homepage]
   # 首页布局方式：custom(自定义)、page(单页)、profile(个人资料)、hero(英雄区)
   layout = "custom"
+  # 首页 hero 区的一句话简介(custom.html 中引用)
+  customSummary = "嵌入式开发学习笔记:整理 MCU、RTOS、操作系统、通信协议、C/C++ 等方向的知识点与原理剖析。"
   # 是否显示最近文章
   showRecent = false
   # 显示最近文章的数量
@@ -49,9 +54,9 @@ disableImageOptimization = false
   showDraftLabel = true
   showHeadingAnchors = true
   showPagination = true
-  showReadingTime = true
+  showReadingTime = false
   showTableOfContents = false
-  showWordCount = true
+  showWordCount = false
 
 [list]
   showHero = false

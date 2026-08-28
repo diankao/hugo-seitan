@@ -1,9 +1,11 @@
 +++
-title = '11_上位机QT'
+title = '上位机QT'
 date = 2026-02-28T00:00:00+08:00
 draft = false
+description = "本分类包含Qt上位机开发相关的学习笔记"
 categories = ['技术文档']
 tags = ['上位机', 'Qt']
+weight = 11
 +++
 
 # 11_上位机QT

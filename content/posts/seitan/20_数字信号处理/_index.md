@@ -1,9 +1,11 @@
 +++
-title = '20_数字信号处理'
+title = '数字信号处理'
 date = 2026-04-24T00:00:00+08:00
 draft = false
+description = "采样定理、FIR/IIR 滤波器、FFT 频谱分析等数字信号处理(脑电方向)笔记"
 categories = ['嵌入式']
 tags = ['数字信号处理', '脑电', 'EEG', 'DSP']
+weight = 20
 +++
 
 # 数字信号处理（脑电信号处理方向）

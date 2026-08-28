@@ -1,9 +1,11 @@
 +++
-title = '12_影像系统处理'
+title = '影像系统处理'
 date = 2026-03-02T00:00:00+08:00
 draft = false
+description = "本分类包含影像系统相关的学习笔记"
 categories = ['嵌入式']
 tags = ['知识领域']
+weight = 12
 +++
 
 # 12_影像系统处理

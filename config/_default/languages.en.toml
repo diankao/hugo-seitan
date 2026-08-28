@@ -1,0 +1,4 @@
+# 语言层参数(优先级高于 params.toml 同名项,用于覆盖 blowfish 主题的默认值)
+[params]
+  # 全站日期格式,如 2026-08-27
+  dateFormat = "2006-01-02"

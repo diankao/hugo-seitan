@@ -1,9 +1,11 @@
 +++
-title = '12_RTOS'
+title = 'RTOS'
 date = 2026-02-28T00:00:00+08:00
 draft = false
+description = "FreeRTOS 任务管理与调度、信号量与互斥锁、中断处理等 RTOS 主题笔记"
 categories = ['嵌入式']
 tags = ['RTOS', '实时操作系统']
+weight = 12
 +++
 
 # RTOS（实时操作系统）

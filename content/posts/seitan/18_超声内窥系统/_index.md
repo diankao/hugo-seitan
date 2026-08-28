@@ -1,9 +1,11 @@
 +++
-title = '18_超声内窥系统'
+title = '超声内窥系统'
 date = 2026-04-25T00:00:00+08:00
 draft = false
+description = "本分类包含超声与内窥系统架构原理相关的学习笔记"
 categories = ['嵌入式']
 tags = ['知识领域']
+weight = 18
 +++
 
 # 18_超声内窥系统

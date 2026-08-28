@@ -1,9 +1,11 @@
 +++
-title = '13_嵌入式系统设计'
+title = '嵌入式系统设计'
 date = 2026-03-02T00:00:00+08:00
 draft = false
+description = "本分类包含嵌入式系统设计相关的学习笔记"
 categories = ['嵌入式']
 tags = ['知识领域']
+weight = 13
 +++
 
 # 13_嵌入式系统设计

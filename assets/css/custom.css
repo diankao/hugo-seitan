@@ -1,0 +1,7 @@
+/* 栏目卡片简介最多显示两行 */
+.home-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
