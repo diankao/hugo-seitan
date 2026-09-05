@@ -14,6 +14,7 @@ content/posts/seitan/待解析/已处理/
 .trae/
 try_saas.py
 .claude/
+.playwright-mcp/
 
 # Hugo output
 /public/
